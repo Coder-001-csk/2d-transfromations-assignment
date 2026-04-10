@@ -383,8 +383,11 @@
                 p.strokeWeight(2);
                 p.beginShape();
                 baseShape.forEach(pt => {
-                    // Math: x' = x + y*shx, y' = y + x*shy
-                    p.vertex(pt.x, pt.y);
+                   // Math: x' = x + y*shx, y' = y + x*shy
+                    let newX = pt.x + pt.y * shx;
+                    let newY = pt.y + pt.x * shy;
+                    p.vertex(newX, newY);
+
                 });
                 p.endShape(p.CLOSE);
             };
